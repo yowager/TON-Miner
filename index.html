@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="en"><head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <p class="header__text"><font color="#0088CC">TON</font> MINER</p>
+                <a href="https://t.me/MineTonApp_bot" class="header__link">Cloud Mining in Telegram</a>
+            </div>
+        </header>
+        <main>
+            <section>
+                <div class="container">
+                    <div class="swiper swiper-custom">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <h1 class="hero__title">CALCUMINER</h1>
+                                <video autoplay="" muted="" loop="" playsinline="" class="hero__image">
+                                    <source src="media/one.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="swiper-slide">
+                                <h1 class="hero__title">BLOCK BREACKER</h1>
+                                <video autoplay="" muted="" loop="" playsinline="" class="hero__image">
+                                    <source src="media/two.MP4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="swiper-slide">
+                                <h1 class="hero__title">QUANTUM CORE</h1>
+
+                                <video autoplay="" muted="" loop="" playsinline="" class="hero__image">
+                                    <source src="media/three.MP4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <div class="custom-button-next">
+                            <img class="hero__arrow-icon" src="images/arrow-rigth.png" alt="Next">
+                        </div>
+                        <div class="custom-button-prev">
+                            <img class="hero__arrow-icon" src="images/arrow-left.png" alt="Prev">
+                        </div>
+                    </div>
+                    <a href="https://t.me/MineTonApp_bot"><button class="btn">START MINING</button></a>
+                    <p class="text">*Choose your graphic card and start mining in 1 click</p>
+                </div>
+            </section>
+        </main>
+
+        <script src="js/swiper-bundle.min.js"></script>
+        <script>
+            const swiper = new Swiper(".swiper", {
+                spaceBetween: 30,
+                slidesPerView: 1,
+                speed: 500,
+                navigation: {
+                    nextEl: ".custom-button-next",
+                    prevEl: ".custom-button-prev",
+                },
+                on: {
+                    slideChange: updateButtonState,
+                },
+            });
+
+            function updateButtonState() {
+                const prevButton = document.querySelector(".custom-button-prev");
+                const nextButton = document.querySelector(".custom-button-next");
+
+                // Затемнить кнопку "Prev" на первом слайде
+                if (swiper.isBeginning) {
+                    prevButton.style.display = "none";
+                } else {
+                    prevButton.style.display = "block";
+                }
+
+                // Затемнить кнопку "Next" на последнем слайде
+                if (swiper.isEnd) {
+                    nextButton.style.display = "none";
+                } else {
+                    nextButton.style.display = "block";
+                }
+            }
+
+            // Инициализация состояния кнопок при загрузке
+            updateButtonState();
+        </script>
+    
+
+
+</body></html>
